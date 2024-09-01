@@ -1,0 +1,220 @@
+PUT /instituicoes
+{
+  "mappings": {
+    "properties": {
+      "nome": {
+        "type": "text"
+      },
+      "cnpj": {
+        "type": "text"
+      },
+      "cidade": {
+        "type": "text"
+      },
+      "endereco": {
+        "type": "text"
+      },
+      "funcionarios": {
+        "type": "nested"
+      }
+    }
+  }
+}
+
+PUT /funcionarios
+{
+  "mappings": {
+    "properties": {
+      "nome":{
+        "type": "text"
+      },
+      "cpf": {
+        "type": "text"
+      },
+      "instituicao": {
+        "type": "nested"
+      }
+  }
+}
+
+PUT /aluno
+{
+  "mappings": {
+    "properties": {
+      "nome": {
+        "type": "text"
+      },
+      "cpf": {
+        "type": "text"
+      },
+      "data_de_nascimento": {
+        "type": "text"
+      },
+      "numero_de_matricula": {
+        "type": "text"
+      },
+      "endereco": {
+        "type": "text"
+      },
+      "data_de_inicio": {
+        "type": "text"
+      },
+      "instituicao": {
+        "type": "nested"
+      },
+      "responsavel": {
+        "type": "nested"
+      }
+    }
+  }
+}
+
+
+PUT /responsavel
+{
+  "mappings": {
+    "properties": {
+      "nome": {
+        "type": "text"
+      },
+      "cpf": {
+        "type": "text"
+      },
+      "data_de_nascimento": {
+        "type": "text"
+      },
+      "ocupacao": {
+        "type": "text"
+      },
+    }
+  }
+}
+
+PUT /voluntarios
+{
+  "mappings": {
+    "properties": {
+      "horas_trabalhadas": {
+        "type": "text"
+      },
+      "funcionario": {
+        "type": "nested"
+      }
+    }
+  }
+}
+
+PUT /remunerados
+{
+  "mappings": {
+    "properties": {
+      "funcionario": {
+        "type": "nested"
+      },
+      "salario": {
+        "type": "text"
+      },
+      "funcao": {
+        "type": "text"
+      }
+    }
+  }
+}
+
+PUT /professores
+{
+  "mappings": {
+    "properties": {
+      "funcionario": {
+        "type": "nested"
+      },
+      "areas": {
+        "type": "nested"
+      }
+    }
+  }
+}
+
+PUT /diretoria
+{
+  "mappings": {
+    "properties": {
+      "funcionario": {
+        "type": "nested"
+      },
+      "funcao": {
+        "type": "text"
+      }
+    }
+  }
+}
+
+PUT /aulas
+{
+  "mappings": {
+    "properties": {
+      "hora_fim": {
+        "type": "text"
+      },
+      "materia": {
+        "type": "text"
+      },
+      "hora_inicio": {
+        "type": "text"
+      },
+      "numero_da_sala": {
+        "type": "text"
+      },
+      "professor": {
+        "type": "nested"
+      },
+      "alunos": {
+        "type": "nested"
+      }
+    }
+  }
+}
+
+
+PUT /provas
+{
+  "mappings": {
+    "properties": {
+      "professor": {
+        "type": "nested"
+      },
+      "alunos": {
+        "type": "nested"
+      },
+      "aula": {
+        "type": "nested"
+      },
+      "nota": {
+        "type": "text"
+      },
+      "descricao": {
+        "type": "text"
+      }
+    }
+  }
+}
+
+PUT /financiadores
+{
+  "mappings": {
+    "properties": {
+      "cnpj_or_cnpj": {
+        "type": "text"
+      },
+      "atividade_exercida": {
+        "type": "text"
+      },
+      "nome": {
+        "type": "text"
+      },
+      "instituicoes_financiadas": {
+        "type": "nested"
+      }
+    }
+  }
+}
