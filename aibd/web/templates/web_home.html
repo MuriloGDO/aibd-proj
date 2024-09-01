@@ -1,1 +1,48 @@
 {% extends 'home.html' %}
+
+{% block title %}Rede de cursinho{% endblock %}
+
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/web_home.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+    <main>
+        <section class="intro">
+            <div class="container">
+                <h2>Bem-vindo à Rede de Cursinhos Greeks!</h2>
+                <p>Explore nossas unidades e escolha a que melhor atende às suas necessidades.</p>
+            </div>
+        </section>
+
+        <section class="units">
+            <div class="container">
+                <h2>Nossas Unidades</h2>
+                <div class="cards">
+                    {% for unit in units %}
+                        <a href="{% url 'unit_detail' unit.Id %}" class="card">
+                            <div class="card-content">
+                                <h3>{{ unit.Name }}</h3>
+                                <p>{{ unit.Description }}</p>
+                                <div class="line"></div>
+                                <p class="info" style="font-size: 0.8em;">Telefone: {{ unit.Fone }}</p>
+                                <p class="info" style="font-size: 0.8em;">Endereço: {{ unit.Address }}</p>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
