@@ -4,10 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Document</title>
+    <link rel="icon" href="{% static 'images/Greeks.png' %}" type="image/png">
+    {% block head %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <h1>Oi</h1>
+    <header>
+        <div class="container">
+            <h1 style="text-align: center;">Rede de Cursinhos Greeks</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home'%}">Home</a></li>
+                    <li><a href="">Sobre</a></li>
+                    <li><a href="">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+        {% block header %}
+        {% endblock %}
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Rede de Cursinhos Greeks. Todos os direitos reservados.</p>
+            <p><a href="">Política de Privacidade</a> | <a href="">Termos de Uso</a></p>
+        </div>
+        {% block footer %}
+        {% endblock %}
+    </footer>
 </body>
 </html>
