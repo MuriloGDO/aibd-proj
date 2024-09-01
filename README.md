@@ -92,3 +92,5 @@ ENCRYPTION_KEY=c34d38b3a14956121ff2170e5030b471551370178f43e5626eec58b04a30fae2
 Baixe o docker
 Instale o docker compose
 No terminal, acesse a pasta 'app'  e digite `docker compose up`
+Após 10 minutos acesse o Kibana dashboard via localhost:5061
+Usuário: elastic // Senha: trabalho_bd
