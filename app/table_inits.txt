@@ -5,17 +5,17 @@ PUT /instituicoes
       "nome": {
         "type": "text"
       },
-      "cnpj": {
-        "type": "text"
-      },
-      "cidade": {
-        "type": "text"
-      },
       "endereco": {
         "type": "text"
       },
+      "numero_de_vagas": {
+        "type": "integer"
+      }
       "funcionarios": {
         "type": "nested"
+      },
+      "localizacao": {
+        "type": "geo_point"
       }
     }
   }
@@ -50,15 +50,6 @@ PUT /aluno
       "data_de_nascimento": {
         "type": "text"
       },
-      "numero_de_matricula": {
-        "type": "text"
-      },
-      "endereco": {
-        "type": "text"
-      },
-      "data_de_inicio": {
-        "type": "text"
-      },
       "instituicao": {
         "type": "nested"
       },
@@ -77,13 +68,7 @@ PUT /responsavel
       "nome": {
         "type": "text"
       },
-      "cpf": {
-        "type": "text"
-      },
-      "data_de_nascimento": {
-        "type": "text"
-      },
-      "ocupacao": {
+      "telefone": {
         "type": "text"
       },
     }
@@ -104,22 +89,6 @@ PUT /voluntarios
   }
 }
 
-PUT /remunerados
-{
-  "mappings": {
-    "properties": {
-      "funcionario": {
-        "type": "nested"
-      },
-      "salario": {
-        "type": "text"
-      },
-      "funcao": {
-        "type": "text"
-      }
-    }
-  }
-}
 
 PUT /professores
 {
@@ -127,27 +96,11 @@ PUT /professores
     "properties": {
       "funcionario": {
         "type": "nested"
-      },
-      "areas": {
-        "type": "nested"
       }
     }
   }
 }
 
-PUT /diretoria
-{
-  "mappings": {
-    "properties": {
-      "funcionario": {
-        "type": "nested"
-      },
-      "funcao": {
-        "type": "text"
-      }
-    }
-  }
-}
 
 PUT /aulas
 {
@@ -176,7 +129,7 @@ PUT /aulas
 }
 
 
-PUT /provas
+PUT /simulados
 {
   "mappings": {
     "properties": {
@@ -184,16 +137,10 @@ PUT /provas
         "type": "nested"
       },
       "alunos": {
-        "type": "nested"
+        "type": "nested" // id aluno +  nota
       },
       "aula": {
         "type": "nested"
-      },
-      "nota": {
-        "type": "text"
-      },
-      "descricao": {
-        "type": "text"
       }
     }
   }
@@ -213,7 +160,7 @@ PUT /financiadores
         "type": "text"
       },
       "instituicoes_financiadas": {
-        "type": "nested"
+        "type": "nested" // id da instituicao + valor
       }
     }
   }
