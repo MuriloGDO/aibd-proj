@@ -192,11 +192,13 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ../aibd:/code
+      - certs:/code/certs
     ports:
       - "8000:8000"
     environment:
       - ELASTIC_USER=elastic
       - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
       - ELASTIC_HOSTS=http://es01:9200
+      - PYTHONPATH=/code/aibd
     depends_on:
       - es01
