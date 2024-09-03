@@ -1,13 +1,10 @@
 {% extends 'home.html' %}
 
-{% block title %}Rede de cursinho{% endblock %}
+{% block title %}Rede Greeks{% endblock %}
 
 {% block head %}
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/web_home.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 {% endblock %}
 
 {% block header %}
@@ -31,10 +28,22 @@
                         <a href="{% url 'unit_detail' unit.Id %}" class="card">
                             <div class="card-content">
                                 <h3>{{ unit.Name }}</h3>
-                                <p>{{ unit.Description }}</p>
+                                <!-- <p>{{ unit.Description }}</p> -->
                                 <div class="line"></div>
-                                <p class="info" style="font-size: 0.8em;">Telefone: {{ unit.Fone }}</p>
-                                <p class="info" style="font-size: 0.8em;">Endereço: {{ unit.Address }}</p>
+                                <p class="info">Número de vagas: {{ unit.NumberOfVailableVacancy }}</p>
+                                <p class="info">Telefone: {{ unit.Fone }}</p>
+                                <p class="info">Endereço: {{ unit.Address }}</p>
+                                <input 
+                                    type="button" 
+                                    value="Inscreva-se"  
+                                    {% if unit.NumberOfVailableVacancy == 0 %} 
+                                        disabled 
+                                        class="btn-card btn-card-block"
+                                    {% else %} 
+                                        class="btn-card"
+                                        onclick="redirect_subscribe_to_the_unit(event, {{ unit.Id }})" 
+                                    {% endif %}
+                                >
                             </div>
                         </a>
                     {% endfor %}
@@ -45,4 +54,15 @@
 {% endblock %}
 
 {% block footer %}
+{% endblock %}
+
+{% block script %}
+    <script>
+        function redirect_subscribe_to_the_unit(event, unit_id) {
+            event.preventDefault();     
+            event.stopPropagation();
+            const url = `{% url 'subscribe_to_the_unit' 0 %}`.replace('0', unit_id);
+            window.location.href = url;
+        }
+    </script>
 {% endblock %}

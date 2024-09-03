@@ -1,0 +1,46 @@
+.unit-container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.info-list, .lists {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info-item, .list {
+    margin-bottom: 20px;
+}
+
+.info-item h2, .list h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.info-item p, .list ul {
+    margin: 0;
+    padding: 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.ul-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.li-list {
+    background: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    font-size: 1em;
+}
+
+.li-list:last-child {
+    border-bottom: none;
+}

@@ -4,11 +4,7 @@
 
 {% block head %}
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/web_home.css' %}">
     <link rel="stylesheet" href="{% static 'css/unit_detail.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 {% endblock %}
 
 {% block header %}
@@ -16,12 +12,74 @@
 {% endblock %}
 
 {% block content %}
-<div class="unidade-detalhes">
-    <h1>{{ unit.Name }}</h1>
-    <p>Descrição: {{ unit.Description }}</p>
-    <p>Telefone: {{ unit.Fone }}</p>
-    <p>Endereço: {{ unit.Address }}</p>
-</div>
+    <div class="unit-container">
+        <h1>{{ unit.Name }}</h1>
+
+        <section class="info-list">
+            <div class="info-item">
+                <h2>Endereço</h2>
+                <p>{{ unit.address }}</p>
+            </div>
+            <div class="info-item">
+                <h2>Telefone</h2>
+                <p>{{ unit.phone }}</p>
+            </div>
+            <div class="info-item">
+                <h2>Número de Vagas</h2>
+                <p>{{ unit.vacancies }}</p>
+            </div>
+            <div class="info-item">
+                <h2>Número Atual de Alunos</h2>
+                <p>{{ unit.current_students }}</p>
+            </div>
+            <div class="info-item">
+                <h2>Média Geral dos Alunos no Último Simulado</h2>
+                <p>{{ unit.average_score }}</p>
+            </div>
+            <div class="info-item">
+                <h2>Distância até sua Localização</h2>
+                <p>{{ unit.distance_to_user }} km</p>
+            </div>
+        </section>
+
+        <section class="lists">
+            <div class="list">
+                <h2>Professores da Unidade</h2>
+                <ul class="ul-list">
+                    {% for teacher in unit.teachers %}
+                        <li class="li-list">{{ teacher.name }} - {{ teacher.subject }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <div class="list">
+                <h2>Melhores Alunos e suas Notas</h2>
+                <ul class="ul-list">
+                    {% for student in unit.top_students %}
+                        <li class="li-list">{{ student.name }} - Nota: {{ student.score }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <div class="list">
+                <h2>Lista de Financiadores</h2>
+                <ul class="ul-list">
+                    {% for sponsor in unit.sponsors %}
+                        <li class="li-list">{{ sponsor.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <div class="list">
+                <h2>Lista de Voluntários</h2>
+                <ul class="ul-list">
+                    {% for volunteer in unit.volunteers %}
+                        <li class="li-list">{{ volunteer.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+    </div>
 {% endblock %}
 
 {% block footer %}

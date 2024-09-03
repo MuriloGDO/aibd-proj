@@ -1,140 +1,3 @@
-/* body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #003366;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-header p {
-    margin: 10px 0 0;
-    font-size: 1.2em;
-}
-
-.unidades {
-    padding: 20px;
-    text-align: center;
-}
-
-.unidades h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.card {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px;
-    transition: transform 0.3s ease;
-    text-align: left;
-}
-
-.card h3 {
-    margin: 0;
-    color: #003366;
-    font-size: 1.5em;
-}
-
-.card p {
-    margin: 10px 0 0;
-    font-size: 1em;
-    color: #555;
-}
-
-.card:hover {
-    transform: scale(1.1);
-    cursor:pointer;
-}
-
-.card:active {
-    animation: jump 0.3s ease;
-}
-
-@keyframes jump {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-} */
-
-/* Gerais */
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Header */
-header {
-    background-color: #003366;
-    color: white;
-    padding: 20px 0;
-}
-
-header h1 {
-    font-weight: 700;
-    font-size: 2.5em;
-    margin: 0;
-}
-
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-header nav ul li {
-    display: inline;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
 /* Content */
 .intro {
     background-color: #f0f0f0;
@@ -205,27 +68,32 @@ header nav ul li a:hover {
 
 .info {
     text-align: left;
-    font-size: 0.5em;
+    font-size: 0.8em !important;
 }
 
-/* Footer */
-footer {
-    background-color: #003366;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    margin-top: 50px;
+.btn-card {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-footer p {
-    margin: 5px 0;
+.btn-card:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
-footer a {
-    color: white;
-    text-decoration: none;
+.btn-card:active {
+    background-color: #004494;
+    transform: translateY(0);
 }
 
-footer a:hover {
-    text-decoration: underline;
+.btn-card-block {
+    background-color: grey !important;
+    cursor: not-allowed;
 }
