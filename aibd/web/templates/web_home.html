@@ -25,9 +25,9 @@
                 <h2>Nossas Unidades</h2>
                 <div class="cards">
                     {% for unit in units %}
-                        <a href="{% url 'unit_detail' unit.Id %}" class="card">
+                        <a href="{% url 'unit_detail' unit.id %}" class="card">
                             <div class="card-content">
-                                <h3>{{ unit.Name }}</h3>
+                                <h3>{{ unit.nome }}</h3>
                                 <!-- <p>{{ unit.Description }}</p> -->
                                 <div class="line"></div>
                                 <p class="info">Número de vagas: {{ unit.NumberOfVailableVacancy }}</p>
