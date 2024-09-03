@@ -10,9 +10,6 @@ PUT /instituicoes
       },
       "numero_de_vagas": {
         "type": "integer"
-      }
-      "funcionarios": {
-        "type": "nested"
       },
       "localizacao": {
         "type": "geo_point"
@@ -33,6 +30,12 @@ PUT /funcionarios
       },
       "instituicao": {
         "type": "nested"
+      },
+      "voluntario": {
+        "type": "boolean"
+      },
+      "professor": {
+        "type": "boolean"
       }
   }
 }
@@ -74,33 +77,6 @@ PUT /responsavel
     }
   }
 }
-
-PUT /voluntarios
-{
-  "mappings": {
-    "properties": {
-      "horas_trabalhadas": {
-        "type": "text"
-      },
-      "funcionario": {
-        "type": "nested"
-      }
-    }
-  }
-}
-
-
-PUT /professores
-{
-  "mappings": {
-    "properties": {
-      "funcionario": {
-        "type": "nested"
-      }
-    }
-  }
-}
-
 
 PUT /aulas
 {
