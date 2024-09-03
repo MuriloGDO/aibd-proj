@@ -30,19 +30,20 @@
                                 <h3>{{ unit.nome }}</h3>
                                 <!-- <p>{{ unit.Description }}</p> -->
                                 <div class="line"></div>
-                                <p class="info">Número de vagas: {{ unit.NumberOfVailableVacancy }}</p>
-                                <p class="info">Telefone: {{ unit.Fone }}</p>
-                                <p class="info">Endereço: {{ unit.Address }}</p>
+                                <p class="info">Número de vagas: {{ unit.numero_de_vagas }}</p>
+                                <p class="info">Telefone: {{ unit.telefone }}</p>
+                                <p class="info">Endereço: {{ unit.endereco }}</p>
                                 <input 
+                                class="btn-card"
                                     type="button" 
-                                    value="Inscreva-se"  
-                                    {% if unit.NumberOfVailableVacancy == 0 %} 
+                                    value="Inscreva-se"
+                                    <!-- {% if unit.numero_de_vagas == 0 %}
                                         disabled 
                                         class="btn-card btn-card-block"
                                     {% else %} 
                                         class="btn-card"
-                                        onclick="redirect_subscribe_to_the_unit(event, {{ unit.Id }})" 
-                                    {% endif %}
+                                        onclick="redirect_subscribe_to_the_unit(event, {{ unit.id }})" 
+                                    {% endif %} -->
                                 >
                             </div>
                         </a>
