@@ -67,7 +67,6 @@ PUT /aluno
   }
 }
 
-
 PUT /responsavel
 {
   "mappings": {
@@ -78,50 +77,6 @@ PUT /responsavel
       "telefone": {
         "type": "text"
       },
-    }
-  }
-}
-
-PUT /aulas
-{
-  "mappings": {
-    "properties": {
-      "hora_fim": {
-        "type": "text"
-      },
-      "materia": {
-        "type": "text"
-      },
-      "hora_inicio": {
-        "type": "text"
-      },
-      "numero_da_sala": {
-        "type": "text"
-      },
-      "professor": {
-        "type": "nested"
-      },
-      "alunos": {
-        "type": "nested"
-      }
-    }
-  }
-}
-
-
-PUT /simulados
-{
-  "mappings": {
-    "properties": {
-      "professor": {
-        "type": "nested"
-      },
-      "alunos": {
-        "type": "nested" // id aluno +  nota
-      },
-      "aula": {
-        "type": "nested"
-      }
     }
   }
 }
