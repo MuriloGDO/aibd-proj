@@ -13,7 +13,7 @@
 
 {% block content %}
     <div class="unit-container">
-        <h1>{{ unit.Name }}</h1>
+        <h1>{{ unit.nome }}</h1>
 
         <section class="info-list">
             <div class="info-item">
@@ -30,15 +30,15 @@
             </div>
             <div class="info-item">
                 <h2>Número Atual de Alunos</h2>
-                <p>{{ unit.current_students }}</p>
+                <p>{{ unit.numero_de_alunos }}</p>
             </div>
             <div class="info-item">
-                <h2>Média Geral dos Alunos no Último Simulado</h2>
-                <p>{{ unit.average_score }}</p>
+                <h2>Média Geral dos Investimentos Recebidos</h2>
+                <p>{{ unit.media_investimento }}</p>
             </div>
             <div class="info-item">
                 <h2>Distância até sua Localização</h2>
-                <p>{{ unit.distance_to_user }} km</p>
+                <p>{{ unit.distancia_do_aluno }} km</p>
             </div>
         </section>
 
@@ -46,26 +46,17 @@
             <div class="list">
                 <h2>Professores da Unidade</h2>
                 <ul class="ul-list">
-                    {% for teacher in unit.teachers %}
-                        <li class="li-list">{{ teacher.name }} - {{ teacher.subject }}</li>
+                    {% for professor in unit.professores %}
+                    <li class="li-list">{{ professor.nome }} {% if professor.voluntario %} - Voluntário {% endif %}</li>
                     {% endfor %}
                 </ul>
             </div>
-            
-            <div class="list">
-                <h2>Melhores Alunos e suas Notas</h2>
-                <ul class="ul-list">
-                    {% for student in unit.top_students %}
-                        <li class="li-list">{{ student.name }} - Nota: {{ student.score }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-            
+
             <div class="list">
                 <h2>Lista de Financiadores</h2>
                 <ul class="ul-list">
-                    {% for sponsor in unit.sponsors %}
-                        <li class="li-list">{{ sponsor.name }}</li>
+                    {% for financiador in unit.financiadores %}
+                        <li class="li-list">{{ financiador.nome }}</li>
                     {% endfor %}
                 </ul>
             </div>
@@ -73,8 +64,8 @@
             <div class="list">
                 <h2>Lista de Voluntários</h2>
                 <ul class="ul-list">
-                    {% for volunteer in unit.volunteers %}
-                        <li class="li-list">{{ volunteer.name }}</li>
+                    {% for voluntario in unit.voluntarios %}
+                        <li class="li-list">{{ voluntario.nome }}</li>
                     {% endfor %}
                 </ul>
             </div>

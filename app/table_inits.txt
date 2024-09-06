@@ -37,6 +37,7 @@ PUT /funcionarios
       "professor": {
         "type": "boolean"
       }
+    }
   }
 }
 
@@ -53,6 +54,9 @@ PUT /aluno
       "data_de_nascimento": {
         "type": "text"
       },
+      "renda": {
+        "type": "text"
+      }
       "instituicao": {
         "type": "nested"
       },

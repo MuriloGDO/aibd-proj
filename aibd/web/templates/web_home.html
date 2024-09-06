@@ -33,8 +33,7 @@
                                 <p class="info">Número de vagas: {{ unit.numero_de_vagas }}</p>
                                 <p class="info">Telefone: {{ unit.telefone }}</p>
                                 <p class="info">Endereço: {{ unit.endereco }}</p>
-                                <input 
-                                class="btn-card"
+                                <input
                                     type="button" 
                                     value="Inscreva-se"
                                     {% if unit.numero_de_vagas == 0 %}
@@ -42,7 +41,7 @@
                                         class="btn-card btn-card-block"
                                     {% else %} 
                                         class="btn-card"
-                                        onclick="redirect_subscribe_to_the_unit(event, {{ unit.id }})" 
+                                        onclick="redirect_subscribe_to_the_unit(event, '{{unit.id}}')" 
                                     {% endif %}
                                 >
                             </div>
@@ -60,7 +59,7 @@
 {% block script %}
     <script>
         function redirect_subscribe_to_the_unit(event, unit_id) {
-            event.preventDefault();     
+            event.preventDefault();   
             event.stopPropagation();
             const url = `{% url 'subscribe_to_the_unit' 0 %}`.replace('0', unit_id);
             window.location.href = url;
